@@ -19,7 +19,7 @@ app.use(
 )
 app.use(express.json())
 
-//adicionando CSS
+//ADICIONANDO CAMINHO CSS
 app.use(express.static('public'))
 
 app.get('/users/add', (req, res) => {
@@ -34,11 +34,40 @@ app.post('/users/save', (req, res) => {
 
 })
 
+const usuario = {
+  login: 'teste',
+  senha: 123
+
+}
+
+
 app.get('/', (req, res) => {
-  res.render('home')
+
+  res.render('login')
 })
 
-app.use(function (req, res) {
+var auth = false
+
+app.post('/user/login', (req, res) => {
+  const login = req.body.login
+  const senha = req.body.senha
+  let message = ""
+
+  if (login == usuario.login && senha == usuario.senha) {
+    auth = true
+    message = "Usuário logado com sucesso!"
+    res.render('home', { usuario: usuario, auth, message })
+  }
+  else {
+    auth = false
+    message = "Usuário e/ou senha inválidos!"
+    res.render('login', { auth, message })
+  }
+
+})
+
+//pagina 404
+app.use(function (req, res, next) {
   res.status(404).render('404')
 })
 
