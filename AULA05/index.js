@@ -3,6 +3,9 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
 
+
+
+
 //configure template handlebars
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
@@ -16,9 +19,8 @@ app.use(
 )
 app.use(express.json())
 
-//adicionando css
+//adicionando CSS
 app.use(express.static('public'))
-
 
 app.get('/users/add', (req, res) => {
   res.render('userform')
@@ -36,6 +38,9 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
+app.use(function (req, res) {
+  res.status(404).render('404')
+})
 
 
 //webserver
