@@ -3,8 +3,8 @@ const router = express.Router()
 
 var auth = false
 var users = [
-  { name: 'Paulo', age: 30 },
-  { name: 'Maria', age: 35 }
+  { name: 'Pedro Mendes', age: 20 },
+  { name: 'Claudia Ferreira', age: 21 }
 ]
 
 
@@ -30,8 +30,8 @@ router.post('/save', (req, res) => {
 
 
 const usuario = {
-  login: 'teste',
-  senha: 123
+  login: 'entrar',
+  senha: 1234
 }
 
 
@@ -41,7 +41,7 @@ router.post('/login', (req, res) => {
   let message = ""
   if (login == usuario.login && senha == usuario.senha) {
     auth = true
-    message = "Usuário logado com sucesso!"
+    message = "Login feito com sucesso!"
 
     res.render('home', { usuario: usuario, auth, message })
   }

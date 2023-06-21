@@ -1,7 +1,8 @@
 body {
-    background-color: rgb(42, 130, 202);
+    background-color: rgb(199, 223, 243);
   }
   .aviso_404{
-    color: rgb(9, 148, 71);
-    text-decoration: underline;
+    font-style: inherit;
+    color: rgb(4, 41, 21);
+    text-decoration: rgb(59, 2, 73);
   }
