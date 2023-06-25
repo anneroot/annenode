@@ -30,8 +30,8 @@ router.post('/save', (req, res) => {
 
 
 const usuario = {
-  login: 'teste',
-  senha: 123
+  login: 'entrar',
+  senha: 1234
 }
 
 
