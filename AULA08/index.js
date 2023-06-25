@@ -5,12 +5,10 @@ const exphbs = require('express-handlebars')
 const User = require('./routes/userRouter')
 
 
-const hbs = exphbs.create({
-  partialsDir: ["views/partials"]
-})
+
 
 //configure template handlebars
-app.engine('handlebars', hbs.engine)
+app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 
