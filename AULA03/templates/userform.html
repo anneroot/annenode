@@ -11,10 +11,13 @@
   <body>
     <h1>Adicionar Usuário</h1>
     <form action="/users/save" method="post">
+       <form action="/users/logout" method="get">
       <div>
         <input type="text" name="name" placeholder="Digite seu nome">
         <input type="text" name="age" placeholder="Digite idade">
+        <button type="submite" class="bnt bnt-primary">logout</button>
         <input type="submit" value="Cadastrar" />
+        
       </div>
     </form>
 
